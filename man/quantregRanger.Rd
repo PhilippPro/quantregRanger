@@ -2,9 +2,7 @@
 % Please edit documentation in R/quantregRanger.R
 \name{quantregRanger}
 \alias{quantregRanger}
-\title{Quantile Regression with Ranger
-
-Creates a quantile regression forest like described in Meinshausen, 2006.##'}
+\title{Quantile Regression with Ranger}
 \usage{
 quantregRanger(formula = NULL, data = NULL, num.trees = 500,
   mtry = NULL, min.node.size = NULL)
@@ -20,6 +18,9 @@ quantregRanger(formula = NULL, data = NULL, num.trees = 500,
 
 \item{min.node.size}{Minimal node size. Default is 10.}
 }
+\description{
+Creates a quantile regression forest like described in Meinshausen, 2006.
+}
 \examples{
 y = rnorm(150)
 x = cbind(y + rnorm(150), rnorm(150))
@@ -32,5 +33,14 @@ library(quantregForest)
 mod2 = quantregForest(x=as.matrix(x), y=y)
 predict(mod2, newdata = as.matrix(x[1:5,]), all=TRUE)
 
+}
+\author{
+Philipp Probst
+}
+\references{
+Meinshausen, Nicolai. "Quantile regression forests." The Journal of Machine Learning Research 7 (2006): 983-999.
+}
+\seealso{
+\code{\link{predict.quantregRanger}}
 }
 

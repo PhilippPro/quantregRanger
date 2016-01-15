@@ -1,12 +1,19 @@
+
+##' Creates a quantile regression forest like described in Meinshausen, 2006.
 ##' @title Quantile Regression with Ranger
-##' 
-##' Creates a quantile regression forest like described in Meinshausen, 2006.##' 
 ##' 
 ##' @param formula Object of class \code{formula} or \code{character} describing the model to fit.
 ##' @param data Training data of class \code{data.frame}, \code{matrix} or \code{gwaa.data} (GenABEL).
 ##' @param num.trees Number of trees.
 ##' @param mtry Number of variables to possibly split at in each node. Default is the (rounded down) square root of the number variables. 
 ##' @param min.node.size Minimal node size. Default is 10.
+##' 
+##' @author Philipp Probst
+##' @references
+##'   Meinshausen, Nicolai. "Quantile regression forests." The Journal of Machine Learning Research 7 (2006): 983-999.
+##' @seealso \code{\link{predict.quantregRanger}}
+##' @useDynLib quantregRanger
+##' @importFrom Rcpp evalCpp
 
 ##' @examples
 ##' y = rnorm(150)

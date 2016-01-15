@@ -1,3 +1,10 @@
+##' @title quantregRanger prediction
+##' @param object \code{quantregRanger} object.
+##' @param data New test data of class \code{data.frame}
+##' @param quantiles Numeric vector of quantiles that should be estimated
+##' @return A matrix. The first column contains the conditional quantile 
+##' estimates for the first entry in the vector quantiles. The second 
+##' column contains the estimates for the second entry of quantiles and so on.
 ##' @export
 predict.quantregRanger = function(object, data = NULL, quantiles = c(0.1,0.5,0.9)) {
   origObs = object$origObs
