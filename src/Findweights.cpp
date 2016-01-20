@@ -17,16 +17,16 @@ Rcpp::NumericVector Findweights(NumericVector ONv, NumericVector NNv, NumericVec
         if( (absol <= (thres)) && (absol>= -(thres))  ){
           counti[j-1] = 1;
           meancount = meancount + 1;
-        }else{
+        } else {
           counti[j-1] = 0;
         }
       }
-      if(meancount >= 1){
-        if((normalise)>=1){
+      if (meancount >= 1){
+        if (normalise >= 1){
           for (j=1; j<=(nobs); ++j){
             WEv[j+(i-1)* (nobs)-1] = WEv[j+(i-1)* (nobs)-1] + counti[j-1]/ (double) (meancount)  ;
           }
-        }else{
+        } else {
           for (j=1; j<=(nobs); ++j){
             WEv[j+(i-1)* (nobs)-1] = WEv[j+(i-1)* (nobs)-1] + counti[j-1] ;
           }

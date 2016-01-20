@@ -24,3 +24,64 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// Findweightsfast
+Rcpp::NumericVector Findweightsfast(NumericVector OrdNv, NumericVector NNv, NumericVector filterednodes, IntegerVector index, IntegerVector newindex, NumericVector WEv, int nobs, int nnew, int ntree, double thres, int l);
+RcppExport SEXP quantregRanger_Findweightsfast(SEXP OrdNvSEXP, SEXP NNvSEXP, SEXP filterednodesSEXP, SEXP indexSEXP, SEXP newindexSEXP, SEXP WEvSEXP, SEXP nobsSEXP, SEXP nnewSEXP, SEXP ntreeSEXP, SEXP thresSEXP, SEXP lSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type OrdNv(OrdNvSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type NNv(NNvSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type filterednodes(filterednodesSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type index(indexSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type newindex(newindexSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type WEv(WEvSEXP);
+    Rcpp::traits::input_parameter< int >::type nobs(nobsSEXP);
+    Rcpp::traits::input_parameter< int >::type nnew(nnewSEXP);
+    Rcpp::traits::input_parameter< int >::type ntree(ntreeSEXP);
+    Rcpp::traits::input_parameter< double >::type thres(thresSEXP);
+    Rcpp::traits::input_parameter< int >::type l(lSEXP);
+    __result = Rcpp::wrap(Findweightsfast(OrdNv, NNv, filterednodes, index, newindex, WEv, nobs, nnew, ntree, thres, l));
+    return __result;
+END_RCPP
+}
+// Findweightsinbag
+Rcpp::NumericVector Findweightsinbag(NumericVector ONv, IntegerVector inbag, NumericVector WEv, int nobs, int nnew, int ntree, double thres, NumericVector counti, int normalise);
+RcppExport SEXP quantregRanger_Findweightsinbag(SEXP ONvSEXP, SEXP inbagSEXP, SEXP WEvSEXP, SEXP nobsSEXP, SEXP nnewSEXP, SEXP ntreeSEXP, SEXP thresSEXP, SEXP countiSEXP, SEXP normaliseSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type ONv(ONvSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type inbag(inbagSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type WEv(WEvSEXP);
+    Rcpp::traits::input_parameter< int >::type nobs(nobsSEXP);
+    Rcpp::traits::input_parameter< int >::type nnew(nnewSEXP);
+    Rcpp::traits::input_parameter< int >::type ntree(ntreeSEXP);
+    Rcpp::traits::input_parameter< double >::type thres(thresSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type counti(countiSEXP);
+    Rcpp::traits::input_parameter< int >::type normalise(normaliseSEXP);
+    __result = Rcpp::wrap(Findweightsinbag(ONv, inbag, WEv, nobs, nnew, ntree, thres, counti, normalise));
+    return __result;
+END_RCPP
+}
+// Findweightsinbagfast
+Rcpp::NumericVector Findweightsinbagfast(NumericVector ONv, NumericVector OrdNv, NumericVector filterednodes, IntegerVector index, IntegerVector newindex, IntegerVector inbag, NumericVector WEv, int nobs, int ntree, double thres, int l);
+RcppExport SEXP quantregRanger_Findweightsinbagfast(SEXP ONvSEXP, SEXP OrdNvSEXP, SEXP filterednodesSEXP, SEXP indexSEXP, SEXP newindexSEXP, SEXP inbagSEXP, SEXP WEvSEXP, SEXP nobsSEXP, SEXP ntreeSEXP, SEXP thresSEXP, SEXP lSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type ONv(ONvSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type OrdNv(OrdNvSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type filterednodes(filterednodesSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type index(indexSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type newindex(newindexSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type inbag(inbagSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type WEv(WEvSEXP);
+    Rcpp::traits::input_parameter< int >::type nobs(nobsSEXP);
+    Rcpp::traits::input_parameter< int >::type ntree(ntreeSEXP);
+    Rcpp::traits::input_parameter< double >::type thres(thresSEXP);
+    Rcpp::traits::input_parameter< int >::type l(lSEXP);
+    __result = Rcpp::wrap(Findweightsinbagfast(ONv, OrdNv, filterednodes, index, newindex, inbag, WEv, nobs, ntree, thres, l));
+    return __result;
+END_RCPP
+}

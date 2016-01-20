@@ -3,4 +3,5 @@
 S3method(predict,quantregRanger)
 export(quantregRanger)
 importFrom(Rcpp,evalCpp)
+importFrom(Rcpp,sourceCpp)
 useDynLib(quantregRanger)

@@ -5,7 +5,7 @@
 \title{quantregRanger prediction}
 \usage{
 \method{predict}{quantregRanger}(object, data = NULL, quantiles = c(0.1,
-  0.5, 0.9))
+  0.5, 0.9), all = TRUE, obs = 1, ...)
 }
 \arguments{
 \item{object}{\code{quantregRanger} object.}
@@ -13,6 +13,13 @@
 \item{data}{New test data of class \code{data.frame}}
 
 \item{quantiles}{Numeric vector of quantiles that should be estimated}
+
+\item{all}{A logical value. all=TRUE uses all observations for prediction. 
+all=FALSE uses only a certain number of observations per node for prediction 
+(set with argument obs). The default is all=TRUE}
+
+\item{An}{integer number. Determines the maximal number of observations per node 
+to use for prediction. The input is ignored for all=TRUE. The default is obs=1}
 }
 \value{
 A matrix. The first column contains the conditional quantile 

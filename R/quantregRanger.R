@@ -1,4 +1,3 @@
-
 ##' Creates a quantile regression forest like described in Meinshausen, 2006.
 ##' @title Quantile Regression with Ranger
 ##' 
@@ -10,10 +9,10 @@
 ##' 
 ##' @author Philipp Probst
 ##' @references
-##'   Meinshausen, Nicolai. "Quantile regression forests." The Journal of Machine Learning Research 7 (2006): 983-999.
+##' Meinshausen, Nicolai. "Quantile regression forests." The Journal of Machine Learning Research 7 (2006): 983-999.
 ##' @seealso \code{\link{predict.quantregRanger}}
 ##' @useDynLib quantregRanger
-##' @importFrom Rcpp evalCpp
+##' @importFrom Rcpp evalCpp sourceCpp
 
 ##' @examples
 ##' y = rnorm(150)
@@ -28,13 +27,11 @@
 ##' predict(mod2, newdata = as.matrix(x[1:5,]), all=TRUE)
 ##' 
 ##' @export
-quantregRanger = function(formula = NULL, data = NULL,  num.trees = 500, mtry = NULL, min.node.size = NULL){
+quantregRanger = function(formula = NULL, data = NULL,  num.trees = 500, mtry = NULL, min.node.size = NULL) {
   cl = match.call()
   cl[[1]] = as.name("quantregRanger")
-  qrf = ranger::ranger(formula = formula, data = data,  num.trees = 500, mtry = NULL, write.forest = TRUE, 
-                min.node.size = NULL)  
+  qrf = ranger::ranger(formula = formula, data = data,  num.trees = num.trees, mtry = mtry, write.forest = TRUE, min.node.size = min.node.size, keep.inbag=TRUE)
   class(qrf) = c("quantregRanger","ranger")
-  
   qrf[["call"]] = cl
   qrf[["origNodes"]] = getnodes(qrf, data)
   qrf[["origObs"]] = y

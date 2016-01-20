@@ -20,9 +20,10 @@ The DESCRIPTION file:
 Maintainer: \packageMaintainer{quantregRanger}
 }
 \references{
-~~ Literature or other references for background information ~~
+N. Meinshausen (2006)
+"Quantile Regression Forests", Journal of Machine Learning Research 7, 983-999
+\url{http://jmlr.csail.mit.edu/papers/v7/}
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
 \keyword{ package }
 \seealso{
 ~~ Optional links to other man pages, e.g. ~~

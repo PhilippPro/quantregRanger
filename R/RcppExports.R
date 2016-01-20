@@ -5,3 +5,15 @@ Findweights <- function(ONv, NNv, WEv, nobs, nnew, ntree, thres, counti, normali
     .Call('quantregRanger_Findweights', PACKAGE = 'quantregRanger', ONv, NNv, WEv, nobs, nnew, ntree, thres, counti, normalise)
 }
 
+Findweightsfast <- function(OrdNv, NNv, filterednodes, index, newindex, WEv, nobs, nnew, ntree, thres, l) {
+    .Call('quantregRanger_Findweightsfast', PACKAGE = 'quantregRanger', OrdNv, NNv, filterednodes, index, newindex, WEv, nobs, nnew, ntree, thres, l)
+}
+
+Findweightsinbag <- function(ONv, inbag, WEv, nobs, nnew, ntree, thres, counti, normalise) {
+    .Call('quantregRanger_Findweightsinbag', PACKAGE = 'quantregRanger', ONv, inbag, WEv, nobs, nnew, ntree, thres, counti, normalise)
+}
+
+Findweightsinbagfast <- function(ONv, OrdNv, filterednodes, index, newindex, inbag, WEv, nobs, ntree, thres, l) {
+    .Call('quantregRanger_Findweightsinbagfast', PACKAGE = 'quantregRanger', ONv, OrdNv, filterednodes, index, newindex, inbag, WEv, nobs, ntree, thres, l)
+}
+

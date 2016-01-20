@@ -7,6 +7,7 @@ Author: Philipp Probst
 Maintainer: Philipp Probst <philipp_probst@gmx.de>
 Description: Implementation of Quantile Regression Forests for the fast Random Forest package Ranger
 License: GPL (>= 2)
+NeedsCompilation: yes
 Imports: Rcpp (>= 0.12.2)
 LinkingTo: Rcpp
 Depends: ranger
