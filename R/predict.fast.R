@@ -20,7 +20,7 @@ predict.fast = function(object, data= NULL, quantiles= c(0.1,0.5,0.9),obs=1,...)
                                   as.double(filterednodes),
                                   as.integer(as.vector(z)),
                                   as.integer(as.vector(newindex)),
-                                  as.double(as.vector(unlist(t(as.data.frame(object$inbag))))),
+                                  as.integer(as.vector(unlist(t(as.data.frame(object$inbag))))),
                                   as.double(weightvec),
                                   as.integer(nobs),
                                   as.integer(ntree),

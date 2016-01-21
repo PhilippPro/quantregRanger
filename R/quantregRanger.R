@@ -21,19 +21,18 @@
 ##' mod = quantregRanger(y ~ ., data = data)
 ##' predict(mod, data = data[1:5, ])
 ##' 
-##' # QuantregForest
-##' library(quantregForest)
-##' mod2 = quantregForest(x=as.matrix(x), y=y)
-##' predict(mod2, newdata = as.matrix(x[1:5,]), all=TRUE)
-##' 
 ##' @export
-quantregRanger = function(formula = NULL, data = NULL,  num.trees = 500, mtry = NULL, min.node.size = NULL) {
+quantregRanger = function(formula = NULL, data = NULL,  num.trees = 500, mtry = NULL, min.node.size = NULL, importance = FALSE, quantiles=c(0.1,0.5,0.9)) {
   cl = match.call()
   cl[[1]] = as.name("quantregRanger")
-  qrf = ranger::ranger(formula = formula, data = data,  num.trees = num.trees, mtry = mtry, write.forest = TRUE, min.node.size = min.node.size, keep.inbag=TRUE)
+  qrf = ranger::ranger(formula = formula , data = data,  num.trees = num.trees, mtry = mtry, write.forest = TRUE, min.node.size = min.node.size, keep.inbag = TRUE)
   class(qrf) = c("quantregRanger","ranger")
   qrf[["call"]] = cl
   qrf[["origNodes"]] = getnodes(qrf, data)
-  qrf[["origObs"]] = y
+  qrf[["origObs"]] = model.frame(formula, data)[[1]]
+  if(importance==TRUE){
+    qrf[["importance"]] = predict.imp(qrf, quantiles = quantiles, formula = formula, data = data)
+    qrf[["quantiles"]] = quantiles
+  }
   qrf
 }

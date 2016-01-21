@@ -17,3 +17,11 @@ Findweightsinbagfast <- function(ONv, OrdNv, filterednodes, index, newindex, inb
     .Call('quantregRanger_Findweightsinbagfast', PACKAGE = 'quantregRanger', ONv, OrdNv, filterednodes, index, newindex, inbag, WEv, nobs, ntree, thres, l)
 }
 
+Findweightsinbagfastimp <- function(ONv, ONvp, OrdNv, filterednodes, index, newindex, inbag, WEv, WEvp, npred, nobs, ntree, thres, l, countbreak) {
+    .Call('quantregRanger_Findweightsinbagfastimp', PACKAGE = 'quantregRanger', ONv, ONvp, OrdNv, filterednodes, index, newindex, inbag, WEv, WEvp, npred, nobs, ntree, thres, l, countbreak)
+}
+
+test <- function(ONv, NNv, ntree) {
+    .Call('quantregRanger_test', PACKAGE = 'quantregRanger', ONv, NNv, ntree)
+}
+

@@ -5,7 +5,8 @@
 \title{Quantile Regression with Ranger}
 \usage{
 quantregRanger(formula = NULL, data = NULL, num.trees = 500,
-  mtry = NULL, min.node.size = NULL)
+  mtry = NULL, min.node.size = NULL, importance = FALSE,
+  quantiles = c(0.1, 0.5, 0.9))
 }
 \arguments{
 \item{formula}{Object of class \code{formula} or \code{character} describing the model to fit.}
@@ -27,11 +28,6 @@ x = cbind(y + rnorm(150), rnorm(150))
 data = data.frame(x,y)
 mod = quantregRanger(y ~ ., data = data)
 predict(mod, data = data[1:5, ])
-
-# QuantregForest
-library(quantregForest)
-mod2 = quantregForest(x=as.matrix(x), y=y)
-predict(mod2, newdata = as.matrix(x[1:5,]), all=TRUE)
 
 }
 \author{
