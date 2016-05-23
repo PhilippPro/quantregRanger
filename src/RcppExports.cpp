@@ -110,16 +110,3 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
-// test
-Rcpp::List test(NumericVector ONv, NumericVector NNv, int ntree);
-RcppExport SEXP quantregRanger_test(SEXP ONvSEXP, SEXP NNvSEXP, SEXP ntreeSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject __result;
-    Rcpp::RNGScope __rngScope;
-    Rcpp::traits::input_parameter< NumericVector >::type ONv(ONvSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type NNv(NNvSEXP);
-    Rcpp::traits::input_parameter< int >::type ntree(ntreeSEXP);
-    __result = Rcpp::wrap(test(ONv, NNv, ntree));
-    return __result;
-END_RCPP
-}

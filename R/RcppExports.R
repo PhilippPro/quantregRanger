@@ -21,7 +21,3 @@ Findweightsinbagfastimp <- function(ONv, ONvp, OrdNv, filterednodes, index, newi
     .Call('quantregRanger_Findweightsinbagfastimp', PACKAGE = 'quantregRanger', ONv, ONvp, OrdNv, filterednodes, index, newindex, inbag, WEv, WEvp, npred, nobs, ntree, thres, l, countbreak)
 }
 
-test <- function(ONv, NNv, ntree) {
-    .Call('quantregRanger_test', PACKAGE = 'quantregRanger', ONv, NNv, ntree)
-}
-
