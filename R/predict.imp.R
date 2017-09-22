@@ -1,4 +1,5 @@
-predict.imp = function(object, quantiles = c(0.1,0.5,0.9), obs = 1, formula, data, ...) {
+## @ export
+predict.imp = function(object, quantiles = c(0.1,0.5,0.9), obs = 1, formula, data) {
   data.selected = model.frame(formula, data)
   origpred = data.selected[, -1]
   origObs = object$origObs

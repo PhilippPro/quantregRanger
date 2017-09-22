@@ -26,4 +26,3 @@ A matrix. The first column contains the conditional quantile
 estimates for the first entry in the vector quantiles. The second 
 column contains the estimates for the second entry of quantiles and so on.
 }
-
