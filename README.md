@@ -1,5 +1,4 @@
 # quantregRanger
-## Quantile Regression for Ranger
 
 Provides the quantile regression for the [**ranger**](https://github.com/imbs-hl/ranger) package. 
 
