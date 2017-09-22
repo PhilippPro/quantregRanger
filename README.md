@@ -1,18 +1,11 @@
 # quantregRanger
-Quantile Regression for Ranger
+## Quantile Regression for Ranger
 
+Provides the quantile regression for the [**ranger**](https://github.com/imbs-hl/ranger) package. 
 
-##' y = rnorm(150)
-##' x = cbind(y + rnorm(150), rnorm(150))
-##' data = data.frame(x,y)
-##' mod = quantregRanger(y ~ ., data = data)
-##' predict(mod, data = data[1:5, ])
+## Installation (not on CRAN yet)
 
-## Installation
-The development version
-    
     devtools::install_github("PhilippPro/quantregRanger")
-    
     
 ## Usage
 Quickstart:
