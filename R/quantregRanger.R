@@ -3,7 +3,6 @@
 ##' 
 ##' @param formula Object of class \code{formula} or \code{character} describing the model to fit.
 ##' @param data Training data of class \code{data.frame}, \code{matrix} or \code{gwaa.data} (GenABEL).
-##' @param quantiles Quantiles that should be computed.
 ##' @param params.ranger List of further parameters that should be passed to ranger. 
 ##'   See \code{\link[ranger]{ranger}} for possible parameters.
 ##' @author Philipp Probst
@@ -16,10 +15,10 @@
 ##' y = rnorm(150)
 ##' x = cbind(y + rnorm(150), rnorm(150))
 ##' data = data.frame(x,y)
-##' mod = quantregRanger(y ~ ., data = data, quantiles = c(0.1, 0.5, 0,9), params.ranger = list(mtry = 2))
-##' predict(mod, data = data[1:5, ])
+##' mod = quantregRanger(y ~ ., data = data, params.ranger = list(mtry = 2))
+##' predict(mod, data = data[1:5, ], quantiles = c(0.1, 0.5, 0.9))
 ##' @export
-quantregRanger = function(formula = NULL, data = NULL, quantiles = c(0.1,0.5,0.9), importance = FALSE, params.ranger = NULL) {
+quantregRanger = function(formula = NULL, data = NULL, params.ranger = NULL, quantiles = c(0.1, 0.5, 0.9), importance = FALSE) {
   cl = match.call()
   cl[[1]] = as.name("quantregRanger")
   if (is.null(params.ranger))

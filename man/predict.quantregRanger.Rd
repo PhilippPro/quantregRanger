@@ -18,7 +18,7 @@
 all=FALSE uses only a certain number of observations per node for prediction 
 (set with argument obs). The default is all=TRUE}
 
-\item{An}{integer number. Determines the maximal number of observations per node 
+\item{obs}{An integer number. Determines the maximal number of observations per node 
 to use for prediction. The input is ignored for all=TRUE. The default is obs=1}
 }
 \value{

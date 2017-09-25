@@ -4,15 +4,13 @@
 \alias{quantregRanger}
 \title{Quantile Regression with Ranger}
 \usage{
-quantregRanger(formula = NULL, data = NULL, quantiles = c(0.1, 0.5, 0.9),
-  importance = FALSE, params.ranger = NULL)
+quantregRanger(formula = NULL, data = NULL, params.ranger = NULL,
+  quantiles = c(0.1, 0.5, 0.9), importance = FALSE)
 }
 \arguments{
 \item{formula}{Object of class \code{formula} or \code{character} describing the model to fit.}
 
 \item{data}{Training data of class \code{data.frame}, \code{matrix} or \code{gwaa.data} (GenABEL).}
-
-\item{quantiles}{Quantiles that should be computed.}
 
 \item{params.ranger}{List of further parameters that should be passed to ranger. 
 See \code{\link[ranger]{ranger}} for possible parameters.}
@@ -24,8 +22,8 @@ Creates a quantile regression forest like described in Meinshausen, 2006.
 y = rnorm(150)
 x = cbind(y + rnorm(150), rnorm(150))
 data = data.frame(x,y)
-mod = quantregRanger(y ~ ., data = data, quantiles = c(0.1, 0.5, 0,9), params.ranger = list(mtry = 2))
-predict(mod, data = data[1:5, ])
+mod = quantregRanger(y ~ ., data = data, params.ranger = list(mtry = 2))
+predict(mod, data = data[1:5, ], quantiles = c(0.1, 0.5, 0.9))
 }
 \references{
 Meinshausen, Nicolai. "Quantile regression forests." The Journal of Machine Learning Research 7 (2006): 983-999.

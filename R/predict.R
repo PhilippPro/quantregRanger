@@ -5,13 +5,13 @@
 ##' @param all A logical value. all=TRUE uses all observations for prediction. 
 ##' all=FALSE uses only a certain number of observations per node for prediction 
 ##' (set with argument obs). The default is all=TRUE
-##' @param An integer number. Determines the maximal number of observations per node 
+##' @param obs An integer number. Determines the maximal number of observations per node 
 ##' to use for prediction. The input is ignored for all=TRUE. The default is obs=1
 ##' @return A matrix. The first column contains the conditional quantile 
 ##' estimates for the first entry in the vector quantiles. The second 
 ##' column contains the estimates for the second entry of quantiles and so on.
 ##' @export
-predict.quantregRanger = function(object, data = NULL, quantiles = c(0.1,0.5,0.9), all=TRUE, obs=1,...) {
+predict.quantregRanger = function(object, data = NULL, quantiles = c(0.1, 0.5, 0.9), all = TRUE, obs = 1, ...) {
   #check if all is logical
   if (!is.logical(all)) {
     stop("all has to be logical")
