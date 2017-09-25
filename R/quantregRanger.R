@@ -18,7 +18,7 @@
 ##' mod = quantregRanger(y ~ ., data = data, params.ranger = list(mtry = 2))
 ##' predict(mod, data = data[1:5, ], quantiles = c(0.1, 0.5, 0.9))
 ##' @export
-quantregRanger = function(formula = NULL, data = NULL, params.ranger = NULL, quantiles = c(0.1, 0.5, 0.9), importance = FALSE) {
+quantregRanger = function(formula = NULL, data = NULL, params.ranger = NULL, ...) {
   cl = match.call()
   cl[[1]] = as.name("quantregRanger")
   if (is.null(params.ranger))
@@ -28,6 +28,8 @@ quantregRanger = function(formula = NULL, data = NULL, params.ranger = NULL, qua
   qrf[["call"]] = cl
   qrf[["origNodes"]] = getnodes(qrf, data)
   qrf[["origObs"]] = model.frame(formula, data)[[1]]
+  importance = FALSE
+  quantiles = c(0.1, 0.5, 0.9)
   if(importance == TRUE){
     qrf[["importance"]] = predict.imp(qrf, quantiles = quantiles, formula = formula, data = data)
     qrf[["quantiles"]] = quantiles
