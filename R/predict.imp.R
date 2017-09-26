@@ -1,6 +1,5 @@
-## @ export
 predict.imp = function(object, quantiles = c(0.1,0.5,0.9), obs = 1, formula, data) {
-  data.selected = model.frame(formula, data)
+  data.selected = stats::model.frame(formula, data)
   origpred = data.selected[, -1]
   origObs = object$origObs
   nobs = length(origObs)
@@ -13,7 +12,7 @@ predict.imp = function(object, quantiles = c(0.1,0.5,0.9), obs = 1, formula, dat
   z = matrix(nrow = nobs, ncol = ntree)
   newnodes = matrix(nrow = nobs, ncol = ntree)
   newindex = matrix(0, nrow = nobs, ncol = ntree)
-  z = apply(origNodes, 2, function (x) order(x,rnorm(length(x)))) #ordering the nodes with randomization
+  z = apply(origNodes, 2, function (x) order(x, stats::rnorm(length(x)))) #ordering the nodes with randomization
   newnodes = sapply(seq(ncol(z)), function(x) origNodes[z[, x], x])
   npred = ncol(origpred)
   countbreak = rep(0, npred + 1)

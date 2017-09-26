@@ -18,11 +18,16 @@
 all=FALSE uses only a certain number of observations per node for prediction 
 (set with argument obs). The default is all=TRUE}
 
-\item{obs}{An integer number. Determines the maximal number of observations per node 
+\item{obs}{An integer number. Determines the maximal number of observations per node}
+
+\item{...}{Currently ignored.
 to use for prediction. The input is ignored for all=TRUE. The default is obs=1}
 }
 \value{
 A matrix. The first column contains the conditional quantile 
 estimates for the first entry in the vector quantiles. The second 
 column contains the estimates for the second entry of quantiles and so on.
+}
+\description{
+Predicts quantiles for a quantile regression forest trained with quantregRanger.
 }

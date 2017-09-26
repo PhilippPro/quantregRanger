@@ -9,7 +9,7 @@ predict.fast = function(object, data= NULL, quantiles= c(0.1,0.5,0.9),obs=1,...)
   z = matrix(nrow=nobs, ncol=ntree)
   newnodes = matrix(nrow = nobs, ncol = ntree)
   newindex = matrix(0, nrow = nobs, ncol = ntree)
-  z = apply(origNodes, 2, function(x) order(x, rnorm(length(x)))) #ordering the nodes with randomization
+  z = apply(origNodes, 2, function(x) order(x, stats::rnorm(length(x)))) #ordering the nodes with randomization
   newnodes = sapply(seq(ncol(z)), function(x) origNodes[z[, x], x])
   
   if(is.null(data)){

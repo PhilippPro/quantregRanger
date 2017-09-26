@@ -4,7 +4,7 @@
 \alias{quantregRanger}
 \title{Quantile Regression with Ranger}
 \usage{
-quantregRanger(formula = NULL, data = NULL, params.ranger = NULL, ...)
+quantregRanger(formula = NULL, data = NULL, params.ranger = NULL)
 }
 \arguments{
 \item{formula}{Object of class \code{formula} or \code{character} describing the model to fit.}

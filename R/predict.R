@@ -1,4 +1,6 @@
+##' Predicts quantiles for a quantile regression forest trained with quantregRanger. 
 ##' @title quantregRanger prediction
+##'
 ##' @param object \code{quantregRanger} object.
 ##' @param data New test data of class \code{data.frame}
 ##' @param quantiles Numeric vector of quantiles that should be estimated
@@ -6,6 +8,7 @@
 ##' all=FALSE uses only a certain number of observations per node for prediction 
 ##' (set with argument obs). The default is all=TRUE
 ##' @param obs An integer number. Determines the maximal number of observations per node 
+##' @param ... Currently ignored.
 ##' to use for prediction. The input is ignored for all=TRUE. The default is obs=1
 ##' @return A matrix. The first column contains the conditional quantile 
 ##' estimates for the first entry in the vector quantiles. The second 

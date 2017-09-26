@@ -1,14 +1,22 @@
 Package: quantregRanger
 Type: Package
 Title: Quantile Regression Forests for Ranger
-Version: 1.0
-Date: 2016-01-13
-Author: Philipp Probst
-Maintainer: Philipp Probst <philipp_probst@gmx.de>
-Description: Implementation of Quantile Regression Forests for the fast Random Forest package Ranger
-License: GPL (>= 2)
-NeedsCompilation: yes
-Imports: Rcpp (>= 0.12.2)
+Description: This is the implementation of quantile regression forests for the fast random forest package ranger.
+Authors@R: person("Philipp", "Probst", email = "philipp_probst@gmx.de", role = c("aut", "cre"))
+URL: https://github.com/PhilippPro/quantregRanger
+BugReports: https://github.com/PhilippPro/quantregRanger/issues
+License: GPL-3
+Encoding: UTF-8
+Depends:
+    R (>= 3.0.2),
+    stats
+Imports:
+    Rcpp (>= 0.12.2),
+    ranger
 LinkingTo: Rcpp
-Depends: ranger
+LazyData: yes
+ByteCompile: yes
+Version: 1.0
+Date: 2017-09-26
 RoxygenNote: 6.0.1
+Suggests: testthat
