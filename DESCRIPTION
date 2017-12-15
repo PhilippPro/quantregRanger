@@ -1,6 +1,6 @@
 Package: quantregRanger
 Type: Package
-Title: Quantile Regression Forests for Ranger
+Title: Quantile Regression Forests for 'ranger'
 Description: This is the implementation of quantile regression forests for the fast random forest package 'ranger'.
 Authors@R: person("Philipp", "Probst", email = "philipp_probst@gmx.de", role = c("aut", "cre"))
 URL: https://github.com/PhilippPro/quantregRanger
