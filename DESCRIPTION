@@ -1,7 +1,7 @@
 Package: quantregRanger
 Type: Package
 Title: Quantile Regression Forests for Ranger
-Description: This is the implementation of quantile regression forests for the fast random forest package ranger.
+Description: This is the implementation of quantile regression forests for the fast random forest package 'ranger'.
 Authors@R: person("Philipp", "Probst", email = "philipp_probst@gmx.de", role = c("aut", "cre"))
 URL: https://github.com/PhilippPro/quantregRanger
 BugReports: https://github.com/PhilippPro/quantregRanger/issues
@@ -17,6 +17,6 @@ LinkingTo: Rcpp
 LazyData: yes
 ByteCompile: yes
 Version: 1.0
-Date: 2017-09-26
+Date: 2017-12-15
 RoxygenNote: 6.0.1
 Suggests: testthat
