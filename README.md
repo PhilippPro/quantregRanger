@@ -1,11 +1,13 @@
 # quantregRanger
 
 Provides the quantile regression for the [**ranger**](https://github.com/imbs-hl/ranger) package. 
+There is now also a quantile regression in the [**ranger**](https://github.com/imbs-hl/ranger) package which I can recommend to use. 
 
-## Installation (not on CRAN yet)
+## Installation
 
-    devtools::install_github("PhilippPro/quantregRanger")
-    
+    install.packages("quantregRanger")
+    devtools::install_github("PhilippPro/quantregRanger")   
+
 ## Usage
 Quickstart:
 
